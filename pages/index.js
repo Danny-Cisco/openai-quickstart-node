@@ -56,3 +56,20 @@ export default function Home() {
     </div>
   );
 }
+
+
+import { useRive } from '@rive-app/react-canvas';
+
+export default function Simple() {
+  const { rive, RiveComponent } = useRive({
+    src: 'https://cdn.rive.app/animations/vehicles.riv',
+    autoplay: false,
+  });
+
+  return (
+    <RiveComponent
+      onMouseEnter={() => rive && rive.play()}
+      onMouseLeave={() => rive && rive.pause()}
+    />
+  );
+}
