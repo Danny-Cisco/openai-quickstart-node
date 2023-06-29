@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useState } from "react";
 import styles from "./index.module.css";
 
+
 export default function Home() {
   const [animalInput, setAnimalInput] = useState("");
   const [result, setResult] = useState();
@@ -58,18 +59,4 @@ export default function Home() {
 }
 
 
-import { useRive } from '@rive-app/react-canvas';
 
-export default function Simple() {
-  const { rive, RiveComponent } = useRive({
-    src: 'https://cdn.rive.app/animations/vehicles.riv',
-    autoplay: false,
-  });
-
-  return (
-    <RiveComponent
-      onMouseEnter={() => rive && rive.play()}
-      onMouseLeave={() => rive && rive.pause()}
-    />
-  );
-}
